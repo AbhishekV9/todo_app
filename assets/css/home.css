@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    
+}
+
+#page-heading{
+    text-align: center;
+    color:grey;
+    margin-top: 25px;
+}
+
+input{
+   border-style: none;
+}
+#fill-list-form{
+    width:50%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#Enter-description{
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+#Enter-description input{
+    width: 100%;
+    font-size: 1rem;
+}
+#select-Category{
+    width:50%;
+    text-align: center;
+    border-bottom: 1px solid grey;
+    padding-bottom:10px;
+    border-right: 1px solid grey;
+    
+}
+
+#select-Category select{
+    width:90%;
+    border-style: none;
+    font-size: 1rem;
+   
+}
+#fill-date{
+
+    width:49.5%;
+    text-align: center;
+    border-bottom: 1px solid grey;
+    padding-bottom:10px;
+}
+
+#fill-date input{
+    width:90%;
+    margin-top: -20px;
+    font-size: 1rem;
+}
+
+#btn{
+    width:50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 1px solid grey;
+    margin: auto;
+}
+
+button{
+    padding:14px;
+    width:150px;
+    margin-top:30px;
+    margin-bottom: 30px;
+    margin-left:5px;
+    color:white;
+    border-style: none;
+    font-size: 0.9rem;
+}
+
+#todo-container{
+    margin: auto;
+    width:50%;
+}
+.list-details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+.print-description{
+    font-size: 1.3rem;
+    
+}
+.choosen-category{
+    background-color: red;
+    width: 90px;
+    height:10px;
+    padding-top:15px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    align-self: center;
+    color:white;
+    
+}
+.print-date{
+    font-size:1rem;
+    color:grey;
+}
+
+input .checkboxss{
+    color:red;
+    height:50px;
+    width:50px;
+}

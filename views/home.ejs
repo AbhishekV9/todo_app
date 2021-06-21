@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title><%= title %> </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" 
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <h1 id="page-heading">
+            TODO APP
+        </h1>
+
+        <form id="fill-list-form" action="/users/add" method="POST">
+            <div id="Enter-description">
+                <label for="fill-description">DESCRIPTION</label></br>
+                <input type="text" id="fill-description" name="description" placeholder="What do you need to do?" required>
+            </div>
+            <div id="select-Category" >
+                <p>CATEGORY</p>
+                <select name="category"required>
+                    <option value="" selected>Choose a category</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="School">School</option>
+                    <option value="Office">Office</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div id="fill-date">
+                <p>DUE DATE</p></br>
+                <input type="date" id="due-date" name="date" required>
+            </div>
+         
+        </form>
+
+        <div id="btn">
+            <button style="background-color: #444444;" form="fill-list-form" type="submit" >
+                <i class="fas fa-plus"></i>&ensp;
+                ADD TASK
+            </button>
+
+            <button  style="background-color:#EE351E;" form="delete-form" type="submit" >
+                <i class="fas fa-trash"></i>&ensp;
+                DELETE TASK
+            </button>
+
+           
+            
+        </div>
+
+     
+
+        <div id="todo-container">
+            <ul>
+                <% for (let i of todo_list){ %>
+                  <li class="list-details">
+                     <div class="details-date">
+                        <form id="delete-form" action="/users/remove" method="POST">
+                            <input type="checkbox" class="checkboxss" name="selectedTodos" value="<%= i._id %>">
+                            <span class="print-description">&nbsp;&nbsp;<%= i.description %></span></br>
+                            <span class="print-date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;<%= i.date %></span>
+
+                        </form>
+                     </div>
+                     <div class="choosen-category">
+                        <%= i.category %>
+                     </div>
+
+                  </li>
+                  
+                <% } %>
+            </ul>
+        </div>
+
+        <script type="text/javascript" src="/Todo_App/assets/js/home.js"></script>
+    </body>
+</html>
