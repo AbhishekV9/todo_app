@@ -39,7 +39,7 @@
                 ADD TASK
             </button>
 
-            <button  style="background-color:#EE351E;" form="delete-form" type="submit" >
+            <button type="submit" style="background-color:#EE351E;" form="delete-form" >
                 <i class="fas fa-trash"></i>&ensp;
                 DELETE TASK
             </button>
@@ -52,15 +52,16 @@
 
         <div id="todo-container">
             <ul>
+                <form id="delete-form" action="/users/remove" method="POST">
                 <% for (let i of todo_list){ %>
                   <li class="list-details">
                      <div class="details-date">
-                        <form id="delete-form" action="/users/remove" method="POST">
-                            <input type="checkbox" class="checkboxss" name="selectedTodos" value="<%= i._id %>">
+                        
+                            <input type="checkbox" class="checkboxss" name="<%= i._id %>">
                             <span class="print-description">&nbsp;&nbsp;<%= i.description %></span></br>
                             <span class="print-date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;<%= i.date %></span>
 
-                        </form>
+                        
                      </div>
                      <div class="choosen-category">
                         <%= i.category %>
@@ -69,6 +70,7 @@
                   </li>
                   
                 <% } %>
+            </form>
             </ul>
         </div>
 
